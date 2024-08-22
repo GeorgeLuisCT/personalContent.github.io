@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="birthday-banner">
+        <h1>🎉 ¡Feliz Cumpleaños, ELIAN KAREN! 🎉</h1>
+    </div>
+
+    <div id="confetti"></div>
+
+    <div class="birthday-card">
+        <div class="card-inner">
+            <div class="card-front">
+                <h2>🎂 ¡Feliz Cumpleaños! 🎂</h2>
+            </div>
+            <div class="card-back">
+                <p>Que tengas un hermoso y maravilloso día lleno de alegría. Disfruta tus 23 primaveras al máximo,
+                    Hoy es un día especial para celebrar lo increíble que eres y todo lo que has logrado.
+                    ¡Que todos tus sueños se hagan realidad y que la felicidad te acompañe siempre!</p>
+            </div>
+        </div>
+    </div>
+
+
+    <button class="birthday-button">Kareeeennnn Haz click aquí!</button>
+
+    <div id="birthday-message">
+        <strong>🎉 ¡Felicidades! ¡Que todos tus deseos se hagan realidad! 🎉</strong>
+        <p>Espero que este detalle te guste, aunque sé que nunca podré igualar todo lo que has hecho por mí. Estaré
+            eternamente agradecido por todo. Te deseo un cumpleaños maravilloso, lleno de alegría y momentos especiales.
+            ¡Vamos, disfruta tu día al máximo!</p>
+    </div>
+
+    <audio id="birthday-audio" src="recursos/audioHapyBydathe.mp3" autoplay loop></audio>
+
+    <div id="carousel-container">
+        <div id="carousel">
+            <!-- Elementos del carrusel -->
+            <div class="carousel-item item-1"><img style="height: 200px;" src="recursos/karen4.jpg" alt=""></div>
+            <div class="carousel-item item-2"><img style="height: 380px;" src="recursos/karen1.jpg" alt=""></div>
+            <div class="carousel-item item-3"><img style="height: 350px;" src="recursos/karen5.jpg" alt=""></div>
+            <div class="carousel-item item-4"><img style="height: 350px;" src="recursos/karen2.jpg" alt=""></div>
+            <div class="carousel-item item-5"><img style="height: 350px;" src="recursos/karen3.jpg" alt=""></div>            
+           
+            <!-- Agrega más elementos según sea necesario -->
+        </div>
+    </div>
+
+
+    <script src="main.js">
+    </script>
+
+    <script>
+        // Mostrar confeti
+        for (let i = 0; i < 100; i++) {
+            let confetti = document.createElement('div');
+            confetti.className = 'confetti-piece';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            confetti.style.animationDelay = Math.random() * 3 + 's';
+            document.getElementById('confetti').appendChild(confetti);
+        }
+
+        // Mostrar mensaje de cumpleaños al hacer clic en el botón
+        document.querySelector('.birthday-button').addEventListener('click', function () {
+            document.getElementById('birthday-message').style.display = 'block';
+            this.style.display = 'none';
+        });
+    </script>
+
+<button id="toggle-audio">🔈 Karen... Karen... aquí puedes quitar el audio! 🤫 </button>
+
+
+<script>
+    const audio = document.getElementById('birthday-audio');
+    const toggleButton = document.getElementById('toggle-audio');
+
+    toggleButton.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+            toggleButton.textContent = "🔈 Silenciar Audio";
+        } else {
+            audio.pause();
+            toggleButton.textContent = "🔊 Activar Audio";
+        }
+    });
+</script>
+
+</body>
+
+</html>
